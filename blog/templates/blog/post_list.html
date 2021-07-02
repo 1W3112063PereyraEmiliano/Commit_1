@@ -1,11 +1,31 @@
 {% extends 'blog/base.html' %}
 {% block content %}
 {% for post in posts %}
+
+
 <div class="post">
-    <p>{{post.created_date}}</p>
-    <h2> <a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a> </h2>
-    <p>{{ post.text|linebreaksbr }}</p>
-    <p>{{post.author}}</p>
+    <div class="alert alert-light">
+        <h5> <a class="text-success" href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a> <small>author: </small> {{post.author}} </h5>
+    </div>
+    <!-- <p>{{post.created_date}}</p> -->
+    
+    <!-- <p>{{ post.text|linebreaksbr }}</p>
+    <p>{{post.author}}</p> -->
 </div>
+{% endfor %}
+{% endblock %}
+
+{% block content2 %}
+{% for post in posts %}
+{% if forloop.counter < 4 %}
+<div class="col-md-4">
+    <div class="card" style="width: 18rem;">
+        <div class="card-body bg-dark text-white">
+          <h5 class="card-title"><h2> <a class="text-success" href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a> </h2></h5>
+          <p class="lead">By: {{post.author}}</p>
+        </div>
+      </div>
+</div>
+{% endif %}
 {% endfor %}
 {% endblock %}

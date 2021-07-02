@@ -1,6 +1,26 @@
 h2 {
-    color: orange;
+    color: white;
 }
-body{
-    padding-left: 15px;
+html, body {
+    height: 100%;
+    background:  url('https://crossfitbbros.com/bbros-1/wp-content/uploads/2016/05/black-wall-texture-19.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+h1,p{
+    color: white;
+}
+#d1,#d2{
+    display: none;
+}
+#s1,#s2{
+    height: 100%;
+}
+#s2{
+    padding-top: 70px;
+}
+#t1,#p1{
+    color: black;
 }

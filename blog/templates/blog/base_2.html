@@ -37,42 +37,11 @@
                         </div>
                     </li>
                 </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <a class="navbar-brand" href="https://github.com/1W3112063PereyraEmiliano/Commit_1.git">
-                        <img src="https://icon-library.com/images/github-icon-white/github-icon-white-6.jpg" width="30"
-                            height="30" alt="">
-                    </a>
-                </form>
             </div>
         </nav>
     </section>
-    <section id="s1">
-        <div class="container-fluid">
-            <div class="container text-center py-4">
-                <h1 class="display-2" id="d1">Posting</h1>
-                <p class="lead" id="d2">Blogs de la comunidad</p>
-                <!-- <a href="{% url 'post_new' %}" class="top-menu">Añadir</a> -->
-            </div>
-        </div>
-        <div class="container py-3">
-            <hr class="bg-white">
-        </div>
-        <div class="content2 container">
-            <p class="lead">Blogs recientes</p>
-            <div class="row">
-                {% block content2 %}
-                {% endblock %}
-            </div>
-        </div>
-        
-
-    </section>
-    <section id="s2">
-        <div class="container-fluid">
-            <div class="container text-left py-4">
-                <h2 class="display-4">Encuentra Tu Blog</h2>
-                <!-- <a href="{% url 'post_new' %}" class="top-menu">Añadir</a> -->
-            </div>
+    <div class="container-fluid">
+        <div class="container py-5">
             <div class="content container">
                 <div class="row">
                     <div class="col-md-12">
@@ -82,10 +51,7 @@
                 </div>
             </div>
         </div>
-
-    </section>
-
-
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -93,9 +59,18 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script>
-        $(document).ready(function () {
-            $("#d1").fadeIn(3000)
-            $("#d2").fadeIn(5000)
+        $("#btnEdit").click(function (){
+            var title = $("#id_title").val()
+            var text = $("#id_text").val()
+            if(title == ""){
+                swal("Ingrese un titulo!","Error","error")
+                return;
+            }
+            if(text == ""){
+                swal("Ingrese un texto!","Error","error")
+                return;
+            }
+            swal("Exito al cargar tu Blog!","Exito!","success")
         })
     </script>
 </body>
